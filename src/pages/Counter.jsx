@@ -3,6 +3,7 @@ import { useSpring, animated } from "@react-spring/web";
 import CounterChart from "./../components/counter/CounterChart";
 import CounterButtons from "../components/counter/CounterButtons";
 import DisplayUserDetails from "./../components/user-data/DisplayUserDetails";
+import Logout from "../components/logout/Logout";
 
 const Counter = () => {
   const [count, setCount] = useState(0); // state for manage counter value
@@ -54,11 +55,11 @@ const Counter = () => {
       style={background}
       className="flex flex-col justify-center items-center h-full w-full"
     >
+      <Logout />
       <h1 className="text-3xl font-bold my-4  underline">Counter With Chart</h1>
-      <h4 className="text-2xl font-bold mb-4">{count}</h4>
       <div className="flex justify-around items-start w-full">
         <div className="w-1/4">
-          <DisplayUserDetails />
+          <DisplayUserDetails count={count} />
         </div>
         <div className="w-1/3">
           <CounterButtons
