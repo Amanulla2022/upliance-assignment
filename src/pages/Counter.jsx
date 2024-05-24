@@ -57,11 +57,11 @@ const Counter = () => {
     >
       <Logout />
       <h1 className="text-3xl font-bold my-4  underline">Counter With Chart</h1>
-      <div className="flex justify-around items-start w-full">
-        <div className="w-1/4">
+      <div className="flex md:flex-row flex-col justify-around items-start w-full gap-4">
+        <div className="md:w-1/4 w-full">
           <DisplayUserDetails count={count} />
         </div>
-        <div className="w-1/3">
+        <div className="md:w-1/3 w-full ml-10 md:ml-0">
           <CounterButtons
             onIncrement={handleIncrement}
             onDecrement={handleDecrement}
@@ -69,7 +69,7 @@ const Counter = () => {
           />
         </div>
       </div>
-      <div className="w-4/5 h-1/2 mt-10">
+      <div className="w-full md:w-4/5 h-auto mt-10">
         <CounterChart dataPoints={dataPoints} />
       </div>
     </animated.div>

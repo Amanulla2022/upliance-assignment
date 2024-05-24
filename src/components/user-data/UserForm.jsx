@@ -7,7 +7,7 @@ const UserForm = () => {
   const [basicDetailsFilled, setBasicDetailsFilled] = useState(false); // State to indicate if basic details are filled
 
   return (
-    <div className="flex justify-around w-full">
+    <div className="flex md:flex-row flex-col justify-around w-full">
       <FullForm basicDetailsFilled={basicDetailsFilled} />
       <BasicDetailsForm setBasicDetailsFilled={setBasicDetailsFilled} />
     </div>

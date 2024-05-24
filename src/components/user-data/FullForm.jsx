@@ -52,7 +52,6 @@ const FullForm = ({ basicDetailsFilled }) => {
     // Track changes in the form inputs
     setName(e.target.value);
     setUnSavedChanges(true);
-    // Your existing input change logic
   };
 
   return (

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { saveUserData } from "../../store/store";
 import { v4 as uuidv4 } from "uuid";
+import TextEditor from "./../editor/TextEditor";
 
 // Component to handle basic user details form
 const BasicDetailsForm = ({ setBasicDetailsFilled }) => {
@@ -15,33 +16,25 @@ const BasicDetailsForm = ({ setBasicDetailsFilled }) => {
   // Handler for the left form submission
   const handleLeftFormSubmit = (e) => {
     e.preventDefault();
-    const uid = uuidv4(); // Generate a unique ID for the user
-    dispatch(saveUserData({ ...user, address, phoneNo, uid })); // Save user data to Redux store
-    setBasicDetailsFilled(true); // Indicator for basic details filled or not
+    if (address && phoneNo) {
+      const uid = uuidv4(); // Generate a unique ID for the user
+      dispatch(saveUserData({ ...user, address, phoneNo, uid })); // Save user data to Redux store
+      setBasicDetailsFilled(true); // Indicator for basic details filled or not
+    } else {
+      alert("Please fill in both address and phone number."); // Show alert if basic details are not filled
+    }
   };
 
   return (
     <form onSubmit={handleLeftFormSubmit} className="form-card">
       <div className="form-card-div">
         <label className="form-card-label">Address:</label>
-        <input
-          type="text"
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-          className="form-card-input"
-          required
-        />
+        <TextEditor value={address} onChange={setAddress} />
       </div>
 
       <div className="form-card-div">
         <label className="form-card-label">Phone Number:</label>
-        <input
-          type="tel"
-          value={phoneNo}
-          onChange={(e) => setPhoneNo(e.target.value)}
-          className="form-card-input"
-          required
-        />
+        <TextEditor value={phoneNo} onChange={setPhoneNo} />
       </div>
       <button type="submit" className="form-buttons">
         Save
