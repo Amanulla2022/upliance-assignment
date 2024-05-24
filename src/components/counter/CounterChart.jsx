@@ -34,6 +34,7 @@ const CounterChart = ({ dataPoints }) => {
         borderColor: "rgb(255,0,0)", // border color
         backgroundColor: "rgb(0,0,255)", // fill color
         innerWidth: 10,
+        tension: 0.3,
         fill: true,
       },
     ],

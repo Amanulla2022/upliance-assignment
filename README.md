@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# [Hosted_Link](https://upliance-assignment-amanullas-projects.vercel.app/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Upliance Project Overview
 
-## Available Scripts
+## Counter:
 
-In the project directory, you can run:
+    - Functionality: Provides buttons to increment, decrement, and reset a count value.
+    - State Management: Maintains count across re-renders using local component state.
+    - Visual Feedback: Background color intensity increases with the count, providing visual feedback to the user.
+    - Reset Functionality: Reset button resets the count and the background color to their initial states.
 
-### `npm start`
+## User Data Form:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    - Functionality: Allows users to input their name, address, email, and phone number.
+    - Data Management: Autogenerates a unique user ID and saves user data to local storage for persistence.
+    - Unsaved Changes Warning: Displays a warning message for unsaved changes when attempting to close the browser, ensuring data integrity.
+    - Made email, name and unique Id persistance in application.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Text Editor:
 
-### `npm test`
+    - Functionality: Visualizes user data with a rich text editor interface.
+    - Formatting Options: Provides formatting options such as bold, italic, underline for enhanced text manipulation.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Additional Features (Authentication):
 
-### `npm run build`
+    - User Authentication: Integrates Google Sign-In for user authentication(not working on vercel, in localhost working), Normal Signup and Signin authentication ensuring secure access to the application.
+    - Routes: Implements routes to restrict access to certain pages based on user authentication status.
+    - Dashboard Visualization: Combines the functionality of the counter and user profile into a dashboard view, and chart, providing users with a comprehensive overview of their data and interactions within the application.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Component Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### UI Components
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    - UI components are responsible for presenting the user interface to the end-user. Examples include forms, buttons, and charts. These components are implemented using React and styled using TailwindCSS.
 
-### `npm run eject`
+### Container Components
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    - Redux is utilized for managing global application state. In this application, the 'Layout' component handles routing, and the "Counter" page manages count state.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### State Management Choices:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    - The application using Redux for managing global application state.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Redux:
 
-## Learn More
+    - Redux is utilized for managing global state, particularly user data and authentication state. The 'createSlice' function from @reduxjs/toolkit is used to define a slice of the Redux store for user data. Actions such as saveUserData, setAuthState, and resetUserData are dispatched to modify the state.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Local Component State:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    - The BasicDetailsForm component utilizes local state to manage form inputs for address and phone number.
 
-### Code Splitting
+### React Router:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    - React Router is used for declarative routing within the application, enabling navigation between different pages/components. The Router component and Route elements are utilized to define the application's routing logic.

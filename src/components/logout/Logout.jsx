@@ -22,7 +22,7 @@ const Logout = () => {
   return (
     <button
       onClick={handleLogout}
-      className="fixed bottom-4 right-4 bg-red-500 text-white border-none py-2.5 px-5 text-center cursor-pointer"
+      className="fixed top-4 right-4 bg-red-500 text-white border-none py-2.5 px-5 text-center cursor-pointer"
     >
       Logout
     </button>
