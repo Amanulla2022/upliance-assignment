@@ -1,15 +1,13 @@
 import React from "react";
 
-function TextEditor({ onChange }) {
+function TextEditor({ user }) {
   const applyStyle = (style) => {
     document.execCommand(style, false, null);
   };
 
-  const handleInputChange = (e) => {
-    onChange(e.currentTarget.textContent);
-  };
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center mt-4">
+      <h1 className="form-h1">Text Editor</h1>
       <div className="flex justify-center items-center">
         <button
           type="button"
@@ -36,8 +34,13 @@ function TextEditor({ onChange }) {
       <div
         contentEditable="true"
         className="mt-4 w-full min-h-10 p-2 border-2 relative"
-        onInput={handleInputChange}
-      ></div>
+      >
+        <p>UID: {user.uid}</p>
+        <p>Name: {user.name}</p>
+        <p>Address: {user.address}</p>
+        <p>Email: {user.email}</p>
+        <p>Phone No: {user.phoneNo}</p>
+      </div>
     </div>
   );
 }

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { saveUserData } from "../../store/store";
 import { v4 as uuidv4 } from "uuid";
-import TextEditor from "./../editor/TextEditor";
 
 // Component to handle basic user details form
 const BasicDetailsForm = ({ setBasicDetailsFilled }) => {
@@ -29,12 +28,24 @@ const BasicDetailsForm = ({ setBasicDetailsFilled }) => {
     <form onSubmit={handleLeftFormSubmit} className="form-card">
       <div className="form-card-div">
         <label className="form-card-label">Address:</label>
-        <TextEditor value={address} onChange={setAddress} />
+        <input
+          type="text"
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
+          className="form-card-input"
+          required
+        />
       </div>
 
       <div className="form-card-div">
         <label className="form-card-label">Phone Number:</label>
-        <TextEditor value={phoneNo} onChange={setPhoneNo} />
+        <input
+          type="tel"
+          value={phoneNo}
+          onChange={(e) => setPhoneNo(e.target.value)}
+          className="form-card-input"
+          required
+        />
       </div>
       <button type="submit" className="form-buttons">
         Save
